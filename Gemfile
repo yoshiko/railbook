@@ -43,3 +43,18 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+
+  require 'rbconfig'
+  gem 'wdm' if RbConfig::CONFIG['target_os'] =~  /mswin|mingw|sygwin/i
+end
+
+group :test do
+  gem 'capybara'
+end
